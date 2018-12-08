@@ -9,6 +9,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CountoModule } from 'angular2-counto';
 import { ThousandSeparatorPipe } from './thousand-separator.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     BadgeListsComponent,
     NavBarComponent,
-    ThousandSeparatorPipe
+    ThousandSeparatorPipe,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     Ng2DeviceDetectorModule,
     AppRoutingModule,
     HttpClientModule,
+    ChartsModule,
     Ng2DeviceDetectorModule.forRoot()
   ],
   providers: [],
