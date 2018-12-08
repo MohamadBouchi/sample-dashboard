@@ -1,0 +1,145 @@
+.badg-list
+  a.close-panel((click)="panelExpanded= !panelExpanded")
+    h5.panel-title BadgeLists
+      span.fa([ngClass]="{'fa-sort-down': !panelExpanded, 'fa-sort-up':panelExpanded}").text-muted
+  .tag-row([ngClass]="{'hide-component': !panelExpanded, 'show-component':panelExpanded}")
+    span.text-muted.header-text
+      h5 Tag
+      hr
+    .card.umsatz-card(style='border-left: 3px solid blue;')
+      .card-body
+        h5.card-title.umsatz-card-title Umsatz
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('tag_umsatz'), [countFrom]="0", [duration]="1", (countoChange)="counto_1 = $event") {{counto_1|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isMobile? true:false')
+            span.text-danger.mr-2
+              i.fa.fa-caret-down
+              |  {{tag_umsatz_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-danger.mr-2
+            i.fa.fa-caret-down
+            |  {{tag_umsatz_v1| number : '1.2-2'}}%
+    .card.rohertrag-card(style='border-left: 3px solid red;')
+      .card-body
+        h5.card-title.rohertrag-card-title Rohertrag
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('tag_rohertrag'), [countFrom]="0", [duration]="1", (countoChange)="counto_2 = $event") {{counto_2|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isLabtop || isMobile? true:false')
+            span.text-muted.mr-2 {{tag_rohertrag_v1}}
+          p.second-number.card-body-span(*ngIf='isTablet || isMobile? true:false')
+            span.text-danger.mr-2
+              i.fa.fa-caret-down
+              |  {{tag_rohertrag_v2| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-danger.mr-2
+            i.fa.fa-caret-down
+            |  {{tag_rohertrag_v2| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-muted.mr-2 {{tag_rohertrag_v1}}
+    .card.spanne-card(style='border-left: 3px solid green;')
+      .card-body
+        h5.card-title.spanne-card-title Spanne
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('tag_spanne'), [countFrom]="0", [duration]="1", (countoChange)="counto_3 = $event") {{counto_3|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isMobile? true:false')
+            span.text-success.mr-2
+              i.fa.fa-caret-up
+              |  {{tag_spanne_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-success.mr-2
+            i.fa.fa-caret-up
+            |  {{tag_spanne_v1| number : '1.2-2'}}%
+  .tag-row([ngClass]="{'hide-component': !panelExpanded, 'show-component':panelExpanded}")
+    span.text-muted.header-text
+      h5 Monat
+      hr
+    .card.umsatz-card(style='border-left: 3px solid blue;')
+      .card-body
+        h5.card-title.umsatz-card-title Umsatz
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('monat_umsatz'), [countFrom]="0", [duration]="1", (countoChange)="counto_4 = $event") {{counto_4|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isMobile? true:false')
+            span.text-danger.mr-2
+              i.fa.fa-caret-down
+              |  {{monat_umsatz_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-danger.mr-2
+            i.fa.fa-caret-down
+            |  {{monat_umsatz_v1| number : '1.2-2'}}%
+    .card.rohertrag-card(style='border-left: 3px solid red;')
+      .card-body
+        h5.card-title.rohertrag-card-title Rohertrag
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('monat_rohertrag'), [countFrom]="0", [duration]="1", (countoChange)="counto_5 = $event") {{counto_5|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isLabtop || isMobile? true:false')
+            span.text-muted.mr-2 {{monat_rohertrag_v2}}
+          p.second-number.card-body-span(*ngIf='isTablet || isLabtop || isMobile? true:false')
+            span.text-danger.mr-2
+              i.fa.fa-caret-down
+              |  {{monat_rohertrag_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-danger.mr-2
+            i.fa.fa-caret-down
+            |  {{monat_rohertrag_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-muted.mr-2 {{monat_rohertrag_v2}}
+    .card.spanne-card(style='border-left: 3px solid green;')
+      .card-body
+        h5.card-title.spanne-card-title Spanne
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('monat_spanne'), [countFrom]="0", [duration]="1", (countoChange)="counto_6 = $event") {{counto_6|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isMobile? true:false')
+            span.text-success.mr-2
+              i.fa.fa-caret-up
+              |  {{monat_spanne_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-success.mr-2
+            i.fa.fa-caret-up
+            |  {{monat_spanne_v1| number : '1.2-2'}}%
+  .tag-row([ngClass]="{'hide-component': !panelExpanded, 'show-component':panelExpanded}")
+    span.text-muted.header-text
+      h5 Jahr
+      hr
+    .card.umsatz-card(style='border-left: 3px solid blue;')
+      .card-body
+        h5.card-title.umsatz-card-title Umsatz
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('jahr_umsatz'), [countFrom]="0", [duration]="1", (countoChange)="counto_7 = $event") {{counto_7|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isMobile? true:false')
+            span.text-danger.mr-2
+              i.fa.fa-caret-down
+              |  {{jahr_umsatz_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-danger.mr-2
+            i.fa.fa-caret-down
+            |  {{jahr_umsatz_v1| number : '1.2-2'}}%
+    .card.rohertrag-card(style='border-left: 3px solid red;')
+      .card-body
+        h5.card-title.rohertrag-card-title Rohertrag
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('jahr_rohertrag'), [countFrom]="0", [duration]="1", (countoChange)="counto_8 = $event") {{counto_8|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isLabtop || isMobile? true:false')
+            span.text-muted.mr-2 {{jahr_rohertrag_v2}}
+          p.second-number.card-body-span(*ngIf='isTablet || isLabtop || isMobile? true:false')
+            span.text-danger.mr-2
+              i.fa.fa-caret-down
+              |  {{jahr_rohertrag_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-danger.mr-2
+            i.fa.fa-caret-down
+            |  {{jahr_rohertrag_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-muted.mr-2 {{jahr_rohertrag_v2}}
+    .card.spanne-card(style='border-left: 3px solid green;')
+      .card-body
+        h5.card-title.spanne-card-title Spanne
+        h4.card-body-text
+          p.card-text.text-muted(counto, [step]="200", [countTo]=('jahr_spanne'), [countFrom]="0", [duration]="1", (countoChange)="counto_9 = $event") {{counto_9|thousandSeparator}}
+          p.card-body-span.second-number(*ngIf='isTablet || isMobile? true:false')
+            span.text-success.mr-2
+              i.fa.fa-caret-up
+              |  {{jahr_spanne_v1| number : '1.2-2'}}%
+        p.card-body-span(*ngIf='isDesktopDevice && !isLabtop? true:false')
+          span.text-success.mr-2
+            i.fa.fa-caret-up
+            |  {{jahr_spanne_v1| number : '1.2-2'}}%
