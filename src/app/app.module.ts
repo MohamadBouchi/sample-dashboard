@@ -8,6 +8,7 @@ import { BadgeListsComponent } from './badge-lists/badge-lists.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CountoModule } from 'angular2-counto';
 import { ThousandSeparatorPipe } from './thousand-separator.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { ThousandSeparatorPipe } from './thousand-separator.pipe';
     BrowserModule,
     CountoModule,
     Ng2DeviceDetectorModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    Ng2DeviceDetectorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

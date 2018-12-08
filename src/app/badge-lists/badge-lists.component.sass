@@ -1,0 +1,109 @@
+.badg-list
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-gap: 1rem
+  padding-top: 30px
+  margin-top: 10px
+  padding-bottom: 10px
+  padding-right: 10px
+  padding-left: 10px
+.fa-sort-up::before
+  padding: 10px
+.fa-sort-down::before
+  padding: 10px
+.panel-title
+  text-decoration: underline
+  color: gray
+.hide-component
+  visibility: hidden
+  opacity: 0
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear
+.show-component
+  visibility: visible
+  opacity: 1
+  transition-delay: 0s
+.tag-row
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 1rem
+  background-color: white
+  padding-top: 20px
+  padding-bottom: 35px
+  padding-left: 35px
+  padding-right: 35px
+  .card-body
+    display: -webkit-inline-flex
+    white-space: nowrap
+.spanne-card-title, .umsatz-card-title
+  padding-right: 32px
+
+.rohertrag-card-title
+  padding-right: 10px
+
+.tag-row .card-title
+  border-right: 3px solid gray
+  margin-bottom: 0px
+  padding-left: 10px
+  padding-top: 10px
+  padding-left: 0px
+  margin-right: 10px
+
+.close-panel
+  position: absolute
+  right: 30px
+  color: #6c757d
+  text-decoration: none
+  cursor: pointer
+.tag-row .card-body-span
+  margin-bottom: 0px !important
+  padding-top: 10px
+  margin-left: 10px
+
+.card
+  border-radius: 0px
+
+.tag-row
+  .card-body-text
+    margin-bottom: 0px
+    padding: 5px
+  .card-text
+    margin-bottom: 0px
+
+.umsatz-card
+  background-color: aliceblue
+
+.rohertrag-card
+  background-color: antiquewhite
+
+.spanne-card
+  background-color: #e6ffcc
+
+.second-number
+  font-size: 1rem
+
+.fa-chevron-down
+  text-decoration: underline
+  padding-top: 0px
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)
+  .badg-list
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 1rem
+    padding-top: 30px
+    margin-top: 10px
+    padding-bottom: 10px
+    padding-right: 10px
+    padding-left: 10px
+
+/* samsung
+@media only screen and (min-width: 320px) and (max-width: 576px)
+  .badg-list
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 1rem
+    padding-top: 30px
+    margin-top: 10px
+    padding-bottom: 10px
+    padding-right: 10px
+    padding-left: 10px
