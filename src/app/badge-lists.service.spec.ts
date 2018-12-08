@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BadgeListsServiceService } from './badge-lists-service.service';
+import { BadgeListsService } from './badge-lists.service';
 
 describe('BadgeListsServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BadgeListsServiceService = TestBed.get(BadgeListsServiceService);
+    const service: BadgeListsService = TestBed.get(BadgeListsService);
     expect(service).toBeTruthy();
   });
 });
