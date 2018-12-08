@@ -26,7 +26,7 @@
           p.card-text.text-muted(counto, [step]="200", [countTo]=('tag_rohertrag'), [countFrom]="0", [duration]="1", (countoChange)="counto_2 = $event") {{counto_2|thousandSeparator}}
           p.card-body-span.second-number(*ngIf='isTablet || isLabtop || isMobile? true:false')
             span.text-muted.mr-2 {{tag_rohertrag_v1}}
-          p.second-number.card-body-span(*ngIf='isTablet || isMobile? true:false')
+          p.second-number.card-body-span(*ngIf='isTablet || isLabtop || isMobile? true:false')
             span.text-danger.mr-2
               i.fa.fa-caret-down
               |  {{tag_rohertrag_v2| number : '1.2-2'}}%
