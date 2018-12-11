@@ -1,0 +1,14 @@
+.row.login
+  .col-md-6.mx-auto
+    .card.rounded-0
+      .card-header
+        h3.mb-0 Login
+      .card-body
+        form.form
+          .form-group
+            label(for='') UserName
+            input(type='text', required, [(ngModel)] ='loginUserData.username', name='username').form-control.rounded-0
+          .form-group
+            label(for='') Password
+            input(type='text', required, [(ngModel)] ='loginUserData.password', name='password').form-control.rounded-0
+          button(type='button', (click)='login()').btn.btn-primary.float-right Login

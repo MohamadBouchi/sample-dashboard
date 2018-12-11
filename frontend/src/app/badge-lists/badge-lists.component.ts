@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Ng2DeviceService } from 'ng2-device-detector';
 import { BadgeListsService } from '../badge-lists.service';
+import { HttpErrorResponse } from '@angular/common/http';
+
 @Component({
   selector: 'app-badge-lists',
   templateUrl: './badge-lists.component.pug',

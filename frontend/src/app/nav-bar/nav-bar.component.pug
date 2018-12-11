@@ -27,7 +27,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           a.dropdown-item(href='#')
             i.fa.fa-unlock
             |  Password
-          a.dropdown-item(href='#')
+          a.dropdown-item((click)='_auth.logoutUser()', style='cursor:pointer')
             i.fa.fa-sign-out
             |  Sign out
     ng-content

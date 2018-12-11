@@ -1,8 +1,28 @@
 const offene_posten_model = require('./Models/offene_posten');
 const badge_lists_model = require('./Models/badge_lists');
 const users_model = require('./Models/users');
+const jwt = require('jsonwebtoken');
 const express = require ("express");
 const router = express();
+
+
+//verifyToken
+function verifyToken(req, res, next){
+  if(!req.headers.authorization){
+    return res.status(401).send('Unauthorized request');
+  }
+  let token = req.headers.authorization.split(' ')[1];
+  if(token === 'null'){
+    return res.status(401).send('Unauthorized request');
+  }
+  let payload = jwt.verify(token, 'secretkey');
+  if(!payload){
+    return res.status(401).send('Unauthorized request');
+  }
+  req.userId = payload.subject;
+  next();
+}
+
 
 // Routing
 router.get('/offene_posten', function(req, res){
@@ -15,7 +35,7 @@ router.get('/offene_posten', function(req, res){
 // badge-lists
 
 // badge_list = id
-router.get('/badge_list/', function(req, res){
+router.get('/badge_list/', verifyToken, function(req, res){
   badge_lists_model.find({'id':req.query.id}).then(function(result){
     res.json(result);
   });
@@ -28,7 +48,7 @@ router.get('/badge_list_in_array/', function(req, res){
   });
 });
 // all badge_lists
-router.get('/badge_lists/', function(req, res){
+router.get('/badge_lists/', verifyToken, function(req, res){
   badge_lists_model.find().then(function(result){
     res.json(result);
   });
@@ -59,7 +79,9 @@ router.post('/login',(req, res)=>{
         if(user.password != userData.password){
           res.status(401).send("Incorrect password");
         } else{
-          res.status(200).send(user);
+          let payload = { subject: user._id };
+          let token = jwt.sign(payload, 'secretkey');
+          res.status(200).send({token});
         }
       }
     }
