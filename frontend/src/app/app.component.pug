@@ -1,5 +1,5 @@
 app-nav-bar(*ngIf='_auth.loggedIn()')
-.container-fluid
+.container-fluid([ngClass]="{'container-login': !_auth.loggedIn(), '':_auth.loggedIn()}")
   .test(*ngIf="_auth.loggedIn()") <!-- for select menue -->
   .content([ngClass]="{'content-login': !_auth.loggedIn(), '':_auth.loggedIn()}")
     router-outlet
