@@ -17,6 +17,8 @@ import { AuthService } from './auth.service';
 import { BadgeListsService } from './badge-lists.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { SelectMenuComponent } from './select-menu/select-menu.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TokenInterceptorService } from './token-interceptor.service';
     NavBarComponent,
     ThousandSeparatorPipe,
     LineChartComponent,
-    LoginComponent
+    LoginComponent,
+    SelectMenuComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { BadgeListsService } from '../badge-lists.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../auth.service';
+import { Ng2DeviceService } from 'ng2-device-detector';
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,7 +14,15 @@ export class NavBarComponent implements OnInit {
   public filterIdArray: number[] = [1, 2, 3];
   public filterLabel: string;
   public savedFilterArray: string[];
-  constructor(private _BadgListsService: BadgeListsService, private router: Router, private _auth: AuthService) { }
+  isMobile: boolean;
+  isTablet: boolean;
+  isDesktopDevice: boolean;
+  constructor(private _BadgListsService: BadgeListsService, private router: Router, private _auth: AuthService
+             , private deviceService: Ng2DeviceService) {
+              this.isMobile = this.deviceService.isMobile();
+              this.isTablet = this.deviceService.isTablet();
+              this.isDesktopDevice = this.deviceService.isDesktop();
+             }
 
   ngOnInit() { }
   setFilter(id) {

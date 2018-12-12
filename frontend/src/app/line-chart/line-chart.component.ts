@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ng2DeviceService } from 'ng2-device-detector';
 
 @Component({
   selector: 'app-line-chart',
@@ -6,23 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./line-chart.component.sass']
 })
 export class LineChartComponent implements OnInit {
-  public isMobile: boolean;
-  public isTablet: boolean;
-  public isLabtop: boolean;
-  public isDesktopDevice: boolean;
-  public barChartOptions: any;
-  public barChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public barChartType = 'line';
-  public barChartLegend = true;
-  public aspectRation: number;
-  public barChartData: {data: Number[], label: string}[];
-  constructor() {
-    if ( this.isTablet || this.isLabtop) {
-      this.aspectRation = 3;
-    } else if (this.isMobile ) {
-      this.aspectRation = 1;
+  private isMobile: boolean;
+  private isTablet: boolean;
+  private isLabtop: boolean;
+  private barChartOptions: any;
+  private barChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  private barChartType = 'line';
+  private barChartLegend = true;
+  private aspectRation: number;
+  private barChartData: {data: Number[], label: string}[];
+  private innerWidth: number;
+
+  constructor(private deviceService: Ng2DeviceService) {
+    this.isMobile = this.deviceService.isMobile();
+    this.isTablet = this.deviceService.isTablet();
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth < 1565 && this.innerWidth > 500) {
+      this.isLabtop = true;
     } else {
-      this.aspectRation = 4;
+      this.isLabtop = false;
+    }
+    if ( this.isTablet || this.isLabtop) {
+      this.aspectRation = 5;
+    } else if (this.isMobile ) {
+      this.aspectRation = 1; // 1
+    } else {
+      this.aspectRation = 5; // 4
     }
     this.barChartData = [
       {data: [16, 12, 9, 10, 2, 7, 15, 11, 12, 6, 15, 21], label : 'Series A'},
@@ -36,8 +46,5 @@ export class LineChartComponent implements OnInit {
       legend: {position: 'bottom'}
     };
   }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Ng2DeviceService } from 'ng2-device-detector';
 import { BadgeListsService } from '../badge-lists.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-badge-lists',
@@ -11,34 +10,34 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class BadgeListsComponent implements OnInit {
   // tslint:disable-next-line:no-input-rename
   @Input() setDefaultFilter;
-  public tag_umsatz: number;
-  public tag_rohertrag: number;
-  public tag_spanne: number;
-  public tag_umsatz_v1: number;
-  public tag_rohertrag_v1: number;
-  public tag_rohertrag_v2: number;
-  public tag_spanne_v1: number;
-  public monat_umsatz: number;
-  public monat_rohertrag: number;
-  public monat_spanne: number;
-  public monat_umsatz_v1: number;
-  public monat_rohertrag_v1: number;
-  public monat_rohertrag_v2: number;
-  public monat_spanne_v1: number;
-  public jahr_umsatz: number;
-  public jahr_rohertrag: number;
-  public jahr_spanne: number;
-  public jahr_umsatz_v1: number;
-  public jahr_rohertrag_v1: number;
-  public jahr_rohertrag_v2: number;
-  public jahr_spanne_v1: number;
-  public isMobile: boolean;
-  public isTablet: boolean;
-  public aspectRation: number;
-  public isDesktopDevice: boolean;
-  public isLabtop: boolean;
-  public innerWidth: number;
-  public panelExpanded = true;
+  private tag_umsatz: number;
+  private tag_rohertrag: number;
+  private tag_spanne: number;
+  private tag_umsatz_v1: number;
+  private tag_rohertrag_v1: number;
+  private tag_rohertrag_v2: number;
+  private tag_spanne_v1: number;
+  private monat_umsatz: number;
+  private monat_rohertrag: number;
+  private monat_spanne: number;
+  private monat_umsatz_v1: number;
+  private monat_rohertrag_v1: number;
+  private monat_rohertrag_v2: number;
+  private monat_spanne_v1: number;
+  private jahr_umsatz: number;
+  private jahr_rohertrag: number;
+  private jahr_spanne: number;
+  private jahr_umsatz_v1: number;
+  private jahr_rohertrag_v1: number;
+  private jahr_rohertrag_v2: number;
+  private jahr_spanne_v1: number;
+  private isMobile: boolean;
+  private isTablet: boolean;
+  private aspectRation: number;
+  private isDesktopDevice: boolean;
+  private isLabtop: boolean;
+  private innerWidth: number;
+  private panelExpanded = true;
   constructor(
     private deviceService: Ng2DeviceService,
     private _BadgListsService: BadgeListsService
