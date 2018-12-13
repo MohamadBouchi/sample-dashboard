@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 export class BadgeListsService {
 
   public filterId = new Subject<any>();
+  public barChartArray = new Subject<any>();
   constructor(private http: HttpClient) { }
 
   // all badge_lists
@@ -40,6 +41,10 @@ export class BadgeListsService {
 
   getFilterId(id) {
     this.filterId.next(id);
+  }
+
+  setBarChartArray(data) {
+    this.barChartArray.next(data);
   }
 }
 

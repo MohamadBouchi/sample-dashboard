@@ -8,8 +8,8 @@ import { BadgeListsService } from '../badge-lists.service';
   styleUrls: ['./badge-lists.component.sass']
 })
 export class BadgeListsComponent implements OnInit {
-  // tslint:disable-next-line:no-input-rename
-  @Input() setDefaultFilter;
+
+  // @Input() setDefaultFilter;
   private tag_umsatz: number;
   private tag_rohertrag: number;
   private tag_spanne: number;

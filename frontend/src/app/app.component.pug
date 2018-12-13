@@ -1,6 +1,5 @@
 app-nav-bar(*ngIf='_auth.loggedIn()')
 .container-fluid([ngClass]="{'container-login': !_auth.loggedIn(), '':_auth.loggedIn()}")
-  app-select-menu.select-menu(*ngIf="false")
-  //- app-select-menu.select-menu(*ngIf="_auth.loggedIn() && isDesktopDevice")
+  app-select-menu.select-menu(*ngIf="_auth.loggedIn() && isDesktopDevice")
   .content([ngClass]="[!_auth.loggedIn()?'content-login':'', isDesktopDevice?'content-desktop':'', isTablet?'content-tablet':'', isMobile?'content-mobile':'']")
     router-outlet

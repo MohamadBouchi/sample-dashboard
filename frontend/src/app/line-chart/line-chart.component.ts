@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ng2DeviceService } from 'ng2-device-detector';
+import { BadgeListsService } from '../badge-lists.service';
 
 @Component({
   selector: 'app-line-chart',
@@ -17,8 +18,21 @@ export class LineChartComponent implements OnInit {
   private aspectRation: number;
   private barChartData: {data: Number[], label: string}[];
   private innerWidth: number;
+  private Series1 = [16, 12, 9, 10, 2, 7, 15, 11, 12, 6, 15, 21];
+  private Series2 = [6, 2, 13, 15, 21, 1, 5, 1, 24 , 8, 5, 2];
+  private Series3 = [16, 21, 19, 1, 14, 3, 20, 11, 15, 8, 2, 12];
 
-  constructor(private deviceService: Ng2DeviceService) {
+  constructor(private deviceService: Ng2DeviceService, private _BadgListsService: BadgeListsService) {
+    this._BadgListsService.barChartArray.subscribe(data => {
+      this.Series1 = data.series1;
+      this.Series2 = data.series2;
+      this.Series3 = data.series3;
+      this.barChartData = [
+        {data: this.Series1, label : 'Series A'},
+        {data: this.Series2, label : 'Series B'},
+        {data: this.Series3, label : 'Series C'}
+      ];
+    });
     this.isMobile = this.deviceService.isMobile();
     this.isTablet = this.deviceService.isTablet();
     this.innerWidth = window.innerWidth;
@@ -35,9 +49,9 @@ export class LineChartComponent implements OnInit {
       this.aspectRation = 5; // 4
     }
     this.barChartData = [
-      {data: [16, 12, 9, 10, 2, 7, 15, 11, 12, 6, 15, 21], label : 'Series A'},
-      {data: [6, 2, 13, 15, 21, 1, 5, 1, 24 , 8, 5, 2], label : 'Series B'},
-      {data: [16, 21, 19, 1, 14, 3, 20, 11, 15, 8, 2, 12], label : 'Series C'}
+      {data: this.Series1, label : 'Series A'},
+      {data: this.Series2, label : 'Series B'},
+      {data: this.Series3, label : 'Series C'}
     ];
     this.barChartOptions = {
       scaleShowVerticalLines : false,

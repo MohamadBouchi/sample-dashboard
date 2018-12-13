@@ -19,12 +19,12 @@ export class NavBarComponent implements OnInit {
   isDesktopDevice: boolean;
   constructor(private _BadgListsService: BadgeListsService, private router: Router, private _auth: AuthService
              , private deviceService: Ng2DeviceService) {
-              this.isMobile = this.deviceService.isMobile();
-              this.isTablet = this.deviceService.isTablet();
-              this.isDesktopDevice = this.deviceService.isDesktop();
-             }
+    this.isMobile = this.deviceService.isMobile();
+    this.isTablet = this.deviceService.isTablet();
+    this.isDesktopDevice = this.deviceService.isDesktop();
+  }
 
-  ngOnInit() { }
+  ngOnInit() { this.setFilter(1); }
   setFilter(id) {
     if (id === 1) {
       this.savedFilterArray = ['1', '2', '3'];
