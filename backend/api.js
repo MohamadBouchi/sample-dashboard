@@ -60,14 +60,15 @@ router.post('/register', (req, res)=>{
   user.save((err, registerdUser)=>{
     if (err){
       console.log(err);
+      res.status(401).send('error');
     }
     else{
-      res.status(200).send(registerdUser);
+      res.status(200).send({registerdUser});
     }
   });
 });
 
-router.post('/login',(req, res)=>{
+router.post('/login', (req, res)=>{
   let userData = req.body;
   users_model.findOne({'username': userData.username}, (error, user) => {
     if(error){

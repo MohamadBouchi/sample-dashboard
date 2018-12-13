@@ -1,0 +1,23 @@
+.row
+  .col-md-6.mx-auto
+    .card.rounded-0
+      .card-header
+        h3.mb-0 Register
+      .card-body
+        form.form
+          .form-group
+            label(for='') firstName
+            input.form-control.rounded-0(required, type='text', name='first_name', [(ngModel)] ='registerUserData.first_name')
+          .form-group
+            label(for='') lastName
+            input.form-control.rounded-0(required, type='text', name='last_name', [(ngModel)] ='registerUserData.last_name')
+          .form-group
+            label(for='') userName
+            input.form-control.rounded-0(required, type='text', name='username', [(ngModel)] ='registerUserData.username')
+          .form-group
+            label(for='') Email
+            input.form-control.rounded-0(required, type='email', name='email', [(ngModel)] ='registerUserData.email')
+          .form-group
+            label(for='') Password
+            input.form-control.rounded-0(required, type='password', name='password', [(ngModel)] ='registerUserData.password')
+          button.btn.btn-primary.float-right(type='button', (click)='registerUser()') Register
