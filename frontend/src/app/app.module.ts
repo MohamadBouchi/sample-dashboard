@@ -19,6 +19,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { SelectMenuComponent } from './select-menu/select-menu.component';
 import { TableComponent } from './table/table.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TableComponent } from './table/table.component';
     LineChartComponent,
     LoginComponent,
     SelectMenuComponent,
-    TableComponent
+    TableComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
