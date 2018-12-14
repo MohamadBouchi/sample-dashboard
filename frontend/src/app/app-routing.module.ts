@@ -4,9 +4,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
+import { TablesPageComponent } from './tables-page/tables-page.component';
 
 const routes: Routes = [
-  {path: 'page2', component: DashboardComponent,  canActivate: [AuthGuard]},
+  {path: 'tables', component: TablesPageComponent,  canActivate: [AuthGuard]},
   {path: 'start', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},

@@ -18,8 +18,9 @@ import { BadgeListsService } from './badge-lists.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { SelectMenuComponent } from './select-menu/select-menu.component';
-import { TableComponent } from './table/table.component';
+import { UserTableComponent } from './user-table/usertable.component';
 import { RegisterComponent } from './register/register.component';
+import { TablesPageComponent } from './tables-page/tables-page.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +32,9 @@ import { RegisterComponent } from './register/register.component';
     LineChartComponent,
     LoginComponent,
     SelectMenuComponent,
-    TableComponent,
-    RegisterComponent
+    UserTableComponent,
+    RegisterComponent,
+    TablesPageComponent
   ],
   imports: [
     BrowserModule,
