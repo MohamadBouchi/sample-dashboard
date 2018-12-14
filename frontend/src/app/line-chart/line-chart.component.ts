@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ng2DeviceService } from 'ng2-device-detector';
-import { BadgeListsService } from '../badge-lists.service';
+import { BadgeListsService } from '../../../services/badge-lists.service';
 
 @Component({
   selector: 'app-line-chart',
