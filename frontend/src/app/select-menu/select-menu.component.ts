@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { BadgeListsService } from '../../../services/badge-lists.service';
+import { BadgeListsService } from '../services/badge-lists.service';
 
 @Component({
   selector: 'app-select-menu',

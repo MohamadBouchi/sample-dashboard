@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BadgeListsService } from '../../../services/badge-lists.service';
+import { BadgeListsService } from '../services/badge-lists.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-import { AuthService } from '../../../services/auth.service';
+import { AuthService } from '../services/auth.service';
 import { Ng2DeviceService } from 'ng2-device-detector';
 
 @Component({
