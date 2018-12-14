@@ -60,6 +60,15 @@ router.get('/badge_lists/', verifyToken, function (req, res) {
   });
 });
 
+// get all users
+router.get('/users/', verifyToken, function (req, res) {
+  users_model.find().then(function (result) {
+    res.json(result);
+  });
+});
+
+
+// register user
 router.post('/register', (req, res) => {
   let userData = req.body;
   users_model.findOne({
@@ -87,6 +96,8 @@ router.post('/register', (req, res) => {
   });
 });
 
+
+//login user
 router.post('/login', (req, res) => {
   let userData = req.body;
   users_model.findOne({

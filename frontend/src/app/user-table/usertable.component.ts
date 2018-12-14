@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserstableService } from '../services/userstable.service';
+
 
 @Component({
   selector: 'app-user-table',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserTableComponent implements OnInit {
 
-  constructor() { }
+  users: any[];
+  constructor(private _users: UserstableService) { }
 
   ngOnInit() {
+    this._users.getUsers().subscribe(data => {
+      this.users = data;
+    });
   }
 
 }

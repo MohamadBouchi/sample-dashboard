@@ -1,46 +1,14 @@
-table.table.first-table
-  thead.thead-dark
-    tr
-      th(scope='col') #
-      th(scope='col') First
-      th(scope='col') Last
-      th(scope='col') Handle
-  tbody
-    tr
-      th(scope='row') 1
-      td Mark
-      td Otto
-      td @mdo
-    tr
-      th(scope='row') 2
-      td Jacob
-      td Thornton
-      td @fat
-    tr
-      th(scope='row') 3
-      td Larry
-      td the Bird
-      td @twitter
-table.table
-  thead.thead-light
-    tr
-      th(scope='col') #
-      th(scope='col') First
-      th(scope='col') Last
-      th(scope='col') Handle
-  tbody
-    tr
-      th(scope='row') 1
-      td Mark
-      td Otto
-      td @mdo
-    tr
-      th(scope='row') 2
-      td Jacob
-      td Thornton
-      td @fat
-    tr
-      th(scope='row') 3
-      td Larry
-      td the Bird
-      td @twitter
+.table-responsive-md
+  table.table
+    thead.thead-dark
+      tr
+        th(scope='col') #
+        th(scope='col') First Name
+        th(scope='col') Last Name
+        th(scope='col') Email
+    tbody
+      tr(*ngFor='let user of users; let i = index')
+        th(scope='row') {{i}}
+        td {{user.first_name}}
+        td {{user.last_name}}
+        td {{user.email}}
