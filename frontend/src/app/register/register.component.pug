@@ -4,7 +4,7 @@
       .card-header
         h3.mb-0 Register
       .card-body
-        form.form
+        form.form(#registerForm='ngForm')
           .form-group
             label(for='') firstName
             input.form-control.rounded-0(required, type='text', name='first_name', [(ngModel)] ='registerUserData.first_name')
@@ -20,4 +20,4 @@
           .form-group
             label(for='') Password
             input.form-control.rounded-0(required, type='password', name='password', [(ngModel)] ='registerUserData.password')
-          button.btn.btn-primary.float-right(type='button', (click)='registerUser()') Register
+          button.btn.btn-primary.float-right(type='button', (click)='registerUser(registerForm)') Register
