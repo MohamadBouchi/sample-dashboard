@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BadgeListsComponent } from './badge-lists/badge-lists.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CountoModule } from 'angular2-counto';
-import { ThousandSeparatorPipe } from '../pipes/thousand-separator.pipe';
+import { ThousandSeparatorPipe } from './pipes/thousand-separator.pipe';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LineChartComponent } from './line-chart/line-chart.component';
@@ -21,6 +21,7 @@ import { SelectMenuComponent } from './select-menu/select-menu.component';
 import { UserTableComponent } from './user-table/usertable.component';
 import { RegisterComponent } from './register/register.component';
 import { TablesPageComponent } from './tables-page/tables-page.component';
+import { TableSearchPipe } from './pipes/table-search.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TablesPageComponent } from './tables-page/tables-page.component';
     SelectMenuComponent,
     UserTableComponent,
     RegisterComponent,
-    TablesPageComponent
+    TablesPageComponent,
+    TableSearchPipe
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,6 @@
+label(for='search')
+  | Search:
+input([(ngModel)]='search', type='text')
 .table-responsive-md
   table.table
     thead.thead-dark
@@ -6,9 +9,17 @@
         th(scope='col') First Name
         th(scope='col') Last Name
         th(scope='col') Email
+        th(scope='col') Options
     tbody
-      tr(*ngFor='let user of users; let i = index')
+      tr(*ngFor='let user of users|tableSearch: search; let i = index')
         th(scope='row') {{i}}
         td {{user.first_name}}
         td {{user.last_name}}
         td {{user.email}}
+        td
+          a(href='')
+            i.fa.fa-edit.text-warning
+          a(href='')
+            i.text-danger.fa.fa-trash
+          a(href='')
+            i.fa.fa-info.text-primary

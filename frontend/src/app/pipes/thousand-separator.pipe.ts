@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'thousandSeparator'
+  name: 'thousandSeparator',
+  pure: false
 })
 export class ThousandSeparatorPipe implements PipeTransform {
 
