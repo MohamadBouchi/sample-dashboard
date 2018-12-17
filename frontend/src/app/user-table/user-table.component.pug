@@ -1,6 +1,4 @@
-label(for='search')
-  | Search:
-input([(ngModel)]='search', type='text')
+input([(ngModel)]='search', type='text', placeholder='Search by User first name..')#searchInput
 .table-responsive-md
   table.table
     thead.thead-dark
@@ -17,9 +15,9 @@ input([(ngModel)]='search', type='text')
         td {{user.last_name}}
         td {{user.email}}
         td
-          a(href='')
+          a(href='javascript:void(0)')
             i.fa.fa-edit.text-warning
-          a(href='')
+          a(href='javascript:void(0)', (click)='deleteUser(user._id, $event)')
             i.text-danger.fa.fa-trash
           a(href='')
             i.fa.fa-info.text-primary

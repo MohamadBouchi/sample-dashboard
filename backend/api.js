@@ -25,6 +25,8 @@ function verifyToken(req, res, next) {
 
 
 // Routing
+
+//offene posten
 router.get('/offene_posten', function (req, res) {
   offene_posten_model.find().then(function (result) {
     // offene_posten_model.find({'land':1}).limit(12).then(function(result){
@@ -67,6 +69,16 @@ router.get('/users/', verifyToken, function (req, res) {
   });
 });
 
+// delete user
+router.post('/deleteuser/', verifyToken, function (req, res) {
+  users_model.findByIdAndDelete(req.body.id, (err) => {
+    if (err) return res.status(500).send(err);
+    const response = {
+      message: 'user deleted'
+    };
+    return res.status(200).send(response);
+  });
+});
 
 // register user
 router.post('/register', (req, res) => {

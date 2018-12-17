@@ -11,4 +11,8 @@ export class UserstableService {
   getUsers() {
     return this.http.get <any>('http://localhost:4001/users/');
   }
+
+  deletUser(id) {
+    return this.http.post('http://localhost:4001/deleteuser/', {id});
+  }
 }

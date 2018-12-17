@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserstableService } from '../services/userstable.service';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-table',
@@ -9,8 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class UserTableComponent implements OnInit {
 
-  // search = new FormControl();
-  search = '';
+  search: String = '';
   users: any[];
   constructor(private _users: UserstableService) { }
 
@@ -26,5 +24,10 @@ export class UserTableComponent implements OnInit {
         return res.first_name.toLocaleLowerCase().match(this.search.toLocaleLowerCase());
       }
     });
+  }
+
+  deleteUser(id, event) {
+    event.target.offsetParent.parentNode.remove();
+    this._users.deletUser(id).subscribe();
   }
 }
