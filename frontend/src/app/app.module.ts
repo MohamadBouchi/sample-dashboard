@@ -22,6 +22,7 @@ import { UserTableComponent } from './user-table/usertable.component';
 import { RegisterComponent } from './register/register.component';
 import { TablesPageComponent } from './tables-page/tables-page.component';
 import { TableSearchPipe } from './pipes/table-search.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { TableSearchPipe } from './pipes/table-search.pipe';
   imports: [
     BrowserModule,
     FormsModule,
+    NgxPaginationModule,
     CountoModule,
     Ng2DeviceDetectorModule,
     AppRoutingModule,

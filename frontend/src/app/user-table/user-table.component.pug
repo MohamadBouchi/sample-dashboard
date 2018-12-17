@@ -9,7 +9,7 @@ input([(ngModel)]='search', type='text', placeholder='Search by User first name.
         th(scope='col') Email
         th(scope='col') Options
     tbody
-      tr(*ngFor='let user of users|tableSearch: search; let i = index')
+      tr(*ngFor='let user of users|tableSearch: search| paginate: { itemsPerPage: 7, currentPage: p }; let i = index')
         th(scope='row') {{i}}
         td {{user.first_name}}
         td {{user.last_name}}
@@ -21,3 +21,4 @@ input([(ngModel)]='search', type='text', placeholder='Search by User first name.
             i.text-danger.fa.fa-trash
           a(href='')
             i.fa.fa-info.text-primary
+  pagination-controls((pageChange)='p = $event')

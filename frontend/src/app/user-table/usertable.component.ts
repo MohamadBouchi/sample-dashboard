@@ -10,6 +10,7 @@ export class UserTableComponent implements OnInit {
 
   search: String = '';
   users: any[];
+  p: Number = 1;
   constructor(private _users: UserstableService) { }
 
   ngOnInit() {
