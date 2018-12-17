@@ -6,6 +6,7 @@ input([(ngModel)]='search', type='text', placeholder='Search by User first name.
         th(scope='col') #
         th(scope='col') First Name
         th(scope='col') Last Name
+        th(scope='col') User Name
         th(scope='col') Email
         th(scope='col') Options
     tbody
@@ -13,6 +14,7 @@ input([(ngModel)]='search', type='text', placeholder='Search by User first name.
         th(scope='row') {{i}}
         td {{user.first_name}}
         td {{user.last_name}}
+        td {{user.username}}
         td {{user.email}}
         td
           a(href='javascript:void(0)')
